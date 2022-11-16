@@ -72,7 +72,7 @@ namespace OrderFoodAPI.Controllers
         }
 
         [Route("api/CartController/DeleteGioHang")]
-        [HttpDelete]
+        [HttpPost]
 
         public IHttpActionResult DeleteGioHang(Cart cart)
         {
