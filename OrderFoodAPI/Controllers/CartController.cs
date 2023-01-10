@@ -33,6 +33,24 @@ namespace OrderFoodAPI.Controllers
             }
         }
 
+        [Route("api/CartController/DeleteAllGioHang")]
+        [HttpGet]
+        public IHttpActionResult DeleteAllGioHang(int mand)
+        {
+            try
+            {
+                Dictionary<string, object> param = new Dictionary<string, object>();
+                param.Add("mand", mand);
+                DataTable result = Database.ReadTable("DeleteAllGioHang", param);
+                return Ok(result);
+            }
+            catch
+            {
+                return NotFound();
+
+            }
+        }
+
         [Route("api/CartController/GetCartFood")]
         [HttpGet]
         public IHttpActionResult GetCartFood(int mand)
